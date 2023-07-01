@@ -5,7 +5,7 @@ import numpy as np
 import os
 from moviepy.editor import VideoFileClip
 
-emotions=['pleasant_surprised', 'neutral', 'happy', 'angry', 'fear', 'disgust', 'sad']
+emotions=['Pleasant surprised', 'Neutral', 'Happy', 'Angry', 'Fear', 'Disgust', 'Sad']
 
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense,Dropout,LSTM
@@ -112,7 +112,7 @@ def annotate_video_with_emotions(video_path, timestamps, emotions, output_path):
 
         out.write(frame)
 
-        cv2.imshow("Annotated Video", frame)
+        # cv2.imshow("Annotated Video", frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
@@ -140,14 +140,8 @@ import time
 if __name__ == '__main__':
     t=time.time()
     video_path = input("Enter video path: ")
-    rot_dir=""
-    path=[]
-    if "\\" in video_path:
-        path=video_path.split("\\")
-        root_dir=path[:-1]
-        video_path=os.path.join(*path)
-    audio_path = 'extracted_audio.wav'
-    final_path=os.path.join(*root_dir,path[-1]+"_final.mp4")
+    audio_path="extracted_audio.wav"
+    final_path="Sample_clip_final.mp4"
     extract_audio(video_path, audio_path)
     print("Audio extracted at ",time.time()-t," seconds")
     mfccs, timestamps = extract_mfcc(audio_path)
