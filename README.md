@@ -28,7 +28,9 @@ To use Emotional Tone Recognition and Annotation for your videos, follow these s
 2. **Prepare Video**: Place your video file in the same directory as the script. Ensure that the video file is in a compatible format (e.g., MP4).
 
 3. **Run the Script**: Open a terminal or command prompt, navigate to the script's directory, and execute the following command:
-Replace `Emotional tone analyser.py` with the actual name of your Python script.
+```
+python "Emotional tone analyser.py"
+```
 
 4. **Monitor Progress**: The script will display the progress of each step, including feature extraction, emotion classification, and annotation overlay. Depending on the length and complexity of the video, the process may take some time.
 
